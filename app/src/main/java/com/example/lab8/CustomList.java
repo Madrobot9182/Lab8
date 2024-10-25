@@ -76,6 +76,9 @@ public class CustomList extends ArrayAdapter<City> {
      * @param city city to delete
      */
     public void deleteCity(City city){
-
+        if (!hasCity(city)) {
+            throw new IllegalArgumentException("City not found");
+        }
+        else cities.remove(city);
     }
 }
